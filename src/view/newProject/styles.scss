@@ -1,0 +1,51 @@
+.viewProjects{
+  height: 100%;
+
+  .toolbar{
+    padding: 20px;
+    display: flex;
+
+    &__program{
+      width: 100%;
+      .MuiOutlinedInput-root{
+        padding-right: 10px !important;
+      }
+    }
+  }
+
+  .list{
+    display: flex;
+    height: calc(100% - 80px);
+
+    &--wrapper{
+      flex-grow: 1;
+    }
+  }
+
+  .MuiDataGrid-root *{
+    outline: none !important;
+  }
+}
+
+.viewProjectsModal{
+  width: 100%;
+  max-width: 40vw;
+  padding: 25px;
+
+  &__title{
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+  }
+
+  &__delete{
+    color: #afafaf;
+    text-align: right;
+    padding: 2px;
+    font-size: small;
+    user-select: none;
+    line-height: 22px;
+    div{ cursor: pointer; }
+  }
+}
