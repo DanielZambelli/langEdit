@@ -1,0 +1,17 @@
+{
+  "name": "dz-langedit",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "10.0.0",
+    "express-basic-auth": "1.2.1",
+    "pg": "8.7.1",
+    "pg-hstore": "2.3.4",
+    "sequelize": "6.12.4"
+  },
+  "scripts": {
+    "dev":"nodemon index.js",
+    "start": "node index.js"
+  }
+}
