@@ -27,4 +27,4 @@ app.use(express.static(__dirname+'/../client/build/'))
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname+'/../client/build/index.html')))
 
 // init server
-app.listen(process.env.PORT, () => console.log('>> server started on https://localhost:'+process.env.PORT))
+app.listen(process.env.PORT, () => console.log('>> server started on http://localhost:'+process.env.PORT))

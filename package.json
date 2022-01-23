@@ -8,7 +8,7 @@
     "dev:server": "nodemon -r dotenv/config server",
     "dev:client": "cd client && npm run start",
     "build": "cd client && npm run build",
-    "start": "node server/index.js"
+    "start": "node -r dotenv/config server/index.js"
   },
   "dependencies": {
     "dotenv": "14.2.0"
