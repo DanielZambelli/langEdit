@@ -1,4 +1,3 @@
-require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const cors = require('cors')
@@ -24,8 +23,8 @@ app.put('/client/api/project', routeController(({ project: { id, body }}) => Pro
 app.post('/client/api/project', routeController(({ project: { body }}) => Projects.create({body})))
 
 // serve web app
-app.use(express.static(__dirname+'/build/'))
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname+'/../build/index.html')))
+app.use(express.static(__dirname+'/../client/build/'))
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname+'/../client/build/index.html')))
 
 // init server
-app.listen(process.env.PORT, () => console.log('>> server started'))
+app.listen(process.env.PORT, () => console.log('>> server started on https://localhost:'+process.env.PORT))

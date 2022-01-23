@@ -11,18 +11,7 @@ class Api{
 
   saveProject(project){
     return fetch(this.api+'client/api/project', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: this.basicAuth
-      },
-      body: JSON.stringify({ project }),
-    }).then(res => res.json())
-  }
-
-  createProject(project){
-    return fetch(this.api+'client/api/project', {
-      method: 'POST',
+      method: project.id ? 'PUT' : 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: this.basicAuth
@@ -38,4 +27,4 @@ const client = new Api({
   basicAuth: 'Basic '+window.btoa(`${process.env.REACT_APP_PUBLIC_CLIENT_USER}:${process.env.REACT_APP_PUBLIC_CLIENT_PASS}`)
 })
 
-module.exports = client
+export default client

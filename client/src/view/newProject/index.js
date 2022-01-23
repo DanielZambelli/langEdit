@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import ProjectSettingsModal from '../../components/projectSettingsModal'
-import { projects } from '../../state/projects'
-import Api from '../../utils/api'
+import { saveEntities } from '../../state/actionCreators'
 import './styles.scss'
 
 const ViewNewProject = (props) => {
+
   const [project, setProject] = useState({
     body:{
       title: '',
@@ -16,9 +16,8 @@ const ViewNewProject = (props) => {
 
   const handleClose = async () => {
     if(project.body.title) {
-      setProject( await Api.createProject(project) )
-      projects[project.id] = project
-      props.history.push(`/${project.id}`)
+      const res = await saveEntities({ projects: [ project ] })
+      props.history.push(`/${res.projects[0].id}`)
     }
   }
 
